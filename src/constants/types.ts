@@ -1,0 +1,22 @@
+export enum PokemonTypes {
+    bug = 'bug',
+    dark = 'dark',
+    dragon = 'dragon',
+    electric = 'electric',
+    fairy = 'fairy',
+    fighting = 'fighting',
+    fire = 'fire',
+    flying = 'flying',
+    ghost = 'ghost',
+    grass = 'grass',
+    ground = 'ground',
+    ice = 'ice',
+    normal = 'normal',
+    poison = 'poison',
+    psychic = 'psychic',
+    rock = 'rock',
+    steel = 'steel',
+    water = 'water',
+    unknown = 'unknown',
+    shadow = 'shadow '
+}
