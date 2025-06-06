@@ -1,12 +1,15 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useParams } from "react-router";
 import { useGetPokemon } from "../hooks/useGetPokemon";
 import { getMainPokemonType } from "../utils/getMainPokemonType";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 import { convertLbsToKg } from "../utils/convertLbsToKg";
-// import { convertInchesToCm } from "../utils/convertInchesToCm";
+import { convertInchesToCm } from "../utils/convertInchesToCm";
 import { PokemonSprites } from "./PokemonSprites";
 import { TypeIcons } from "./shared/TypeIcons/TypeIcons";
+import { useSearchStore } from "../store/useSearchStore";
+
+
 
 export const PokemonInfo = () => {
     const { pokemonName } = useParams();
@@ -24,8 +27,9 @@ export const PokemonInfo = () => {
                     <TypeIcons types={pokemonData?.types ?? []} />
                 </div>
                 <span>{`Weight: ${convertLbsToKg(pokemonData?.weight ?? 0)} kg`}</span>
-                 {/* <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} cm`}</span>  */}
-               
+                <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} kg`}</span>
+                {/* <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} cm`}</span>  */}
+
                 <PokemonSprites pokemonName={pokemonName} />
             </div>
         </div>
