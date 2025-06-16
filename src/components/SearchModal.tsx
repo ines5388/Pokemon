@@ -24,10 +24,10 @@ const SearchModal: React.FC = () => {
     }
 
     return (
-        <Modal isOpen={isOpen} onRequestClose={handleCloseModal} className={"w-6/12 h-4/12 bg-white mx-auto p-5 mt-5 flex flex-col gap-5 items-center shadow-lg rounded-lg"}>
-            <h6>Search</h6>
-            <input type="text" value={filter} onChange={handleInputChange} className="border p-2" />
-            <button onClick={onClickSearch}>Search</button>
+        <Modal isOpen={isOpen} onRequestClose={handleCloseModal} className={"w-4/12 h-2/12 bg-white mx-auto p-5 mt-5 flex flex-col gap-5 items-center shadow-lg rounded-lg"}>
+            <h2 className="text-blue-600" >Search your Pokemon</h2>
+            <input type="text" value={filter} onChange={handleInputChange} className="border p-2" placeholder="Name of the pokemon" />
+            <button onClick={onClickSearch} className="text-white text-lg bg-blue-400 p-2 rounded-xl mb-1">Search</button>
             {pokemonData?.id && <PokemonCard pokemonId={pokemonData.id} />}
         </Modal>
     );

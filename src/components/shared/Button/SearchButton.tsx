@@ -4,5 +4,5 @@ import { useSearchStore } from "../../../store/useSearchStore";
 
 export const SearchButton = () => {
     const openModal = useSearchStore((state) => state.openModal);
-    return <button onClick={openModal}>Search</button>
+    return <button onClick={openModal} className="hover:text-white">Search Pokemon</button>
 }

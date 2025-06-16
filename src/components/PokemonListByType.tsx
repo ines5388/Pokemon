@@ -9,10 +9,13 @@ export const PokemonListByType = () => {
     const { pokemonList } = useGetPokemonListByType(typeName ?? "");
 
     return (
-        <Grid>
-            {pokemonList?.map((pokemon) => (
-                <PokemonCard key={pokemon?.pokemon.name} pokemon={pokemon?.pokemon} />
-            ))}
-        </Grid>
+        <>
+            <h1 className="flex justify-center text-4xl mb-5 font-serif capitalize"> Pokemons Type: {typeName} </h1>
+            <Grid>
+                {pokemonList?.map((pokemon) => (
+                    <PokemonCard key={pokemon?.pokemon.name} pokemon={pokemon?.pokemon} />
+                ))}
+            </Grid>
+        </>
     );
 };

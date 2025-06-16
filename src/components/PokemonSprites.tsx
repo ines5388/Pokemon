@@ -9,15 +9,15 @@ export const PokemonSprites: React.FC<PokemonSpritesProps> = ({ pokemonName }) =
     const { pokemonData } = useGetPokemon(pokemonName);
 
     return (
-        <div className="flex flex-row">
-            <div>
+        <div className="flex flex-row mt-5">
+            <div className="mr-10 shadow-md">
                 <h6 className="text-2xl text-center">Normal</h6>
                 <div className="flex">
                     <img src={pokemonData?.sprites?.front_default} alt={pokemonData?.name ?? ""} className="mx-auto" />
                     <img src={pokemonData?.sprites?.back_default} alt={pokemonData?.name ?? ""} className="mx-auto" />
                 </div>
             </div>
-            <div>
+            <div className="shadow-md">
                 <h6 className="text-2xl text-center">Shiny</h6>
                 <div className="flex">
                     <img src={pokemonData?.sprites?.front_shiny} alt={pokemonData?.name ?? ""} className="mx-auto" />

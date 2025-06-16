@@ -5,8 +5,7 @@ interface LabelProps {
 }
 
 export const Label: React.FC<LabelProps> = ({ children }) => (
-    <div className="w-24 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
+    <div className="bg-white text-xl flex items-center justify-center mt-4 w-full">
         {children}
-
     </div>
 );
