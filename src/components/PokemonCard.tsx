@@ -21,7 +21,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, pokemonId }) 
     const navigate = useNavigate();
 
     const onclick = () => {
-        navigate(`pokemon/${pokemonData?.name}`);
+        navigate(`/pokemon/${pokemonData?.name}`);
         closeModal(); 
     }
     return (
@@ -29,8 +29,8 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, pokemonId }) 
             <FavoriteButton pokemonId={pokemonData?.id ?? 0} />
             <TypeIcons types={pokemonData?.types ?? []} />
             <div className="flex flex-col items-center mx-auto" onClick={onclick}>
-                <Label>{pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ""}</Label>
                 <img className="mx-auto w-40 h-40" src={pokemonData?.sprites?.front_default} alt={pokemonData?.name ?? ""} />
+                <Label>{pokemonData?.id ? `# ${Number(pokemonData?.id)}` : ""} {pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ""}</Label>
             </div>
         </div>
     );
